@@ -2,7 +2,7 @@ require "pty"
 
 module Breakfast
   class BrunchWatcher
-    BRUNCH_COMMAND = "./node_modules/brunch/bin/brunch watch".freeze
+    BRUNCH_COMMAND = "#{Breakfast::BRUNCH_COMMAND} watch".freeze
 
     attr_accessor :pid
     attr_reader :log

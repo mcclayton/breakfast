@@ -12,12 +12,12 @@ namespace :breakfast do
 
     desc "Build assets for production"
     task build_production: :environment do
-      Breakfast.call_system "NODE_ENV=production ./node_modules/brunch/bin/brunch build --production"
+      Breakfast.call_system "NODE_ENV=production #{Breakfast::BRUNCH_COMMAND} build --production"
     end
 
     desc "Build assets"
     task build: :environment do
-      Breakfast.call_system "./node_modules/brunch/bin/brunch build"
+      Breakfast.call_system "#{Breakfast::BRUNCH_COMMAND} build"
     end
 
     desc "Add a digest to non-fingerprinted assets"
